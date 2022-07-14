@@ -23,15 +23,14 @@
       arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
     >
       <!-- gps-camera calculates rotation, position of user and the distance between the user and places -->
-      <a-camera gps-camera rotation-reader></a-camera>
-
       <a-entity
         gltf-model="./assets/magnemite/scene.gltf"
         rotation="0 180 0"
-        scale="0.05 0.05 0.05"
+        scale="0.15 0.15 0.15"
         gps-entity-place="longitude: 22.31609669221623; latitude: 114.21212668393852;"
         animation-mixer
       />
+      <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
 </html>
