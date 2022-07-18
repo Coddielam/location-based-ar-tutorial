@@ -23,5 +23,3 @@ export function staticLoadPlaces() {
     },
   ];
 }
-
-export default staticLoadPlaces;

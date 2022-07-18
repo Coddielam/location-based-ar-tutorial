@@ -1,3 +1,6 @@
+import { renderPlaces } from "./utils/renderPlaces";
+import { staticLoadPlaces } from "./utils/renderStaticPlaces";
+
 window.onload = () => {
   let places = staticLoadPlaces();
   renderPlaces(places);
