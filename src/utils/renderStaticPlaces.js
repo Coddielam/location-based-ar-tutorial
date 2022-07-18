@@ -1,4 +1,4 @@
-function staticLoadPlaces() {
+export function staticLoadPlaces() {
   return [
     {
       name: "Eddie's Desk",

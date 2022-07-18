@@ -1,4 +1,4 @@
-function renderPlaces(places) {
+export function renderPlaces(places) {
   let scene = document.querySelector("a-scene");
 
   places.forEach((place) => {
@@ -49,5 +49,3 @@ function renderPlaces(places) {
     scene.appendChild(icon);
   });
 }
-
-export default renderPlaces;
