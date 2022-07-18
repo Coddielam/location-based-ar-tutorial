@@ -5,23 +5,27 @@ window.onload = () => {
   let places = staticLoadPlaces();
   renderPlaces(places);
 
-  const infoBox = document.querySelector("div.info-box");
+  const camera = document.querySelector("[camera]");
+  const market = document.querySelector("a-marker");
 
-  const appendInfoBoxMsg = function (info) {
-    infoBox.innerHTML = JSON.stringify(info, null, 2);
-  };
+  const infoBox = document.querySelector(".info-box");
 
-  appendInfoBoxMsg("Loading entity places ...");
+  marker.addEventListener("markerFound", () => {
+    let cameraPosition = camera.object3D.position;
+    let markerPosition = marker.object3D.position;
+    let distance = cameraPosition.distanceTo(markerPosition);
 
-  document.addEventListener("gps-entity-place-loaded", function () {
-    appendInfoBoxMsg("Entity places LOADED!");
+    check = setInterval(() => {
+      cameraPosition = camera.object3D.position;
+      markerPosition = marker.object3D.position;
+      distance = cameraPosition.distanceTo(markerPosition);
+
+      // do what you want with the distance:
+      infoBox.innerHTML = `Distance from marker: ${distance}`;
+    }, 100);
   });
 
-  document.addEventListener("gps-entity-place-added", function () {
-    appendInfoBoxMsg("Entity places ADDED!");
-  });
-
-  document.addEventListener("gps-camera-update-position", function (payload) {
-    appendInfoBoxMsg(payload);
+  marker.addEventListener("markerLost", () => {
+    clearInterval(check);
   });
 };
