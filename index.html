@@ -29,16 +29,28 @@
       ></a-camera>
     </a-scene>
 
-    <div
-      class="info-box"
-      style="
-        width: 90vw;
+    <div id="root"></div>
+
+    <style>
+      #root {
         position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
         bottom: 10px;
-        left: 8px;
+      }
+
+      #root > #directory-box {
+        margin-bottom: 8px;
+      }
+
+      #directory-box {
+        width: 90vw;
         min-height: 80px;
-      "
-    ></div>
+        background-color: white;
+        opacity: 0.7;
+        padding: 8px 16px;
+      }
+    </style>
   </body>
   view raw
 </html>
