@@ -1,22 +1,25 @@
-import { renderPlaces } from "./utils/renderPlaces.js";
 import { staticLoadPlaces } from "./utils/renderStaticPlaces.js";
+import { Place } from "./utils/place.js";
 
 window.onload = () => {
   let places = staticLoadPlaces();
-  renderPlaces(places);
 
-  const camera = document.querySelector("[camera]");
+  const placeInstances = places.map((place) => {
+    return new Place(place.name, place.location.lat, place.location.lng);
+  });
 
-  window.addEventListener("gps-entity-place-loaded", (el) => {
+  placeInstances.forEach((place) => {
     const infoBox = document.createElement("div");
     infoBox.setAttribute("id", "directory-box");
+    infoBox.setAttribute("name", place.name);
     document.querySelector("#root").append(infoBox);
-
-    setInterval(() => {
-      const cameraPosition = camera.object3D.position;
-      const imagePosition = el.target.object3D.position;
-      const distance = cameraPosition.distanceTo(imagePosition);
-      infoBox.innerHTML = `distance: ${distance} / meters`;
-    }, 500);
   });
+
+  setInterval(() => {
+    placeInstances.forEach((place) => {
+      document.querySelector(
+        `#directory-box[name="${place.name}"]`
+      ).innerHTML = `Distance from ${place.name}: ${place.distance}`;
+    });
+  }, 500);
 };
