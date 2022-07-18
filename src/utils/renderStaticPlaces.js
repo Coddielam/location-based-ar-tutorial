@@ -24,4 +24,4 @@ function staticLoadPlaces() {
   ];
 }
 
-module.exports = staticLoadPlaces;
+export default staticLoadPlaces;

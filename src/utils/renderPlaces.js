@@ -50,4 +50,4 @@ function renderPlaces(places) {
   });
 }
 
-module.exports = renderPlaces;
+export default renderPlaces;
