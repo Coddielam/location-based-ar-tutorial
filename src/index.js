@@ -6,7 +6,7 @@ window.onload = () => {
   renderPlaces(places);
 
   const camera = document.querySelector("[camera]");
-  const market = document.querySelector("a-marker");
+  const marker = document.querySelector("a-marker");
 
   const infoBox = document.querySelector(".info-box");
 
