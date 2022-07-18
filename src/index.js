@@ -1,5 +1,5 @@
-const staticLoadPlaces = require("./utils/renderStaticPlaces");
-const renderPlaces = require("./utils/renderPlaces");
+import staticLoadPlaces from "./utils/renderStaticPlaces";
+import renderPlaces from "./utils/renderPlaces";
 
 window.onload = () => {
   let places = staticLoadPlaces();
