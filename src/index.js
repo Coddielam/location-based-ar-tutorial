@@ -10,6 +10,8 @@ window.onload = () => {
 
   const infoBox = document.querySelector(".info-box");
 
+  let check;
+
   marker.addEventListener("markerFound", () => {
     let cameraPosition = camera.object3D.position;
     let markerPosition = marker.object3D.position;
