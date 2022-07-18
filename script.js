@@ -1,8 +1,8 @@
 window.onload = () => {
-  let method = "dynamic";
+  // let method = "dynamic";
 
   // if you want to statically add places, de-comment following line
-  // method = "static";
+  let method = "static";
 
   if (method === "static") {
     let places = staticLoadPlaces();
@@ -31,17 +31,24 @@ window.onload = () => {
 function staticLoadPlaces() {
   return [
     {
-      name: "Your place name",
+      name: "Eddie's Desk",
       location: {
-        lat: 0, // add here latitude if using static data
-        lng: 0, // add here longitude if using static data
+        lat: 22.315877258444125, // add here latitude if using static data
+        lng: 114.2116232775086, // add here longitude if using static data
       },
     },
     {
-      name: "Another place name",
+      name: "In front of the Tomato tree",
       location: {
-        lat: 0,
-        lng: 0,
+        lat: 22.315340384447406,
+        lng: 114.21148706163353,
+      },
+    },
+    {
+      name: "In front of the Coffee area",
+      location: {
+        lat: 22.31587494259916,
+        lng: 114.21163332659212,
       },
     },
   ];
