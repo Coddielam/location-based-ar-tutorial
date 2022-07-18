@@ -13,7 +13,7 @@ export function renderPlaces(places) {
     );
     icon.setAttribute("name", place.name);
     icon.setAttribute("scale", "0.5 0.5 0.5");
-    icon.setAttribute("src", "./map-marker.png");
+    icon.setAttribute("src", "./assets/mapMarker.png");
 
     // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
     icon.setAttribute("scale", "10, 10");
