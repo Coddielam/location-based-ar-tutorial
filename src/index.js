@@ -1,5 +1,5 @@
-import { renderPlaces } from "./utils/renderPlaces";
-import { staticLoadPlaces } from "./utils/renderStaticPlaces";
+import { renderPlaces } from "./utils/renderPlaces.js";
+import { staticLoadPlaces } from "./utils/renderStaticPlaces.js";
 
 window.onload = () => {
   let places = staticLoadPlaces();
