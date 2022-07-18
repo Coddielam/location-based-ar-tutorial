@@ -22,6 +22,8 @@ export function renderPlaces(places) {
       window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
     );
 
+    console.log("place icon:", icon);
+
     const clickListener = function (ev) {
       ev.stopPropagation();
       ev.preventDefault();
