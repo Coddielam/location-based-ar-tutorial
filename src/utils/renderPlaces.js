@@ -1,3 +1,5 @@
+import mapMarker from "../../assets/map-marker.png";
+
 export function renderPlaces(places) {
   let scene = document.querySelector("a-scene");
 
@@ -13,7 +15,7 @@ export function renderPlaces(places) {
     );
     icon.setAttribute("name", place.name);
     icon.setAttribute("scale", "0.5 0.5 0.5");
-    icon.setAttribute("src", "/assets/map-marker.png");
+    icon.setAttribute("src", mapMarker);
 
     // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
     icon.setAttribute("scale", "10, 10");
