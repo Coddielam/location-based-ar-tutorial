@@ -10,17 +10,24 @@
       THREEx.ArToolkitContext.baseURL =
         "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/";
     </script>
-    <script src="./script.js"></script>
+    <script src="./index.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden">
     <a-scene
       vr-mode-ui="enabled: false"
       embedded
-      arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
+      arjs="sourceType: webcam; videoTexture: true; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: true;"
     >
-      <a-camera gps-camera rotation-reader></a-camera>
+      <a-camera
+        gps-camera
+        rotation-reader
+        gpsMinDistance="0.5"
+        arjs-look-controls="smoothingFactor: 0.1"
+      ></a-camera>
     </a-scene>
+
+    <div class="info-box"></div>
   </body>
   view raw
 </html>
